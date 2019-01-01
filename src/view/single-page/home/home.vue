@@ -6,21 +6,12 @@
 
 <script>
 export default {
-  name: 'home',
-    data(){
-      return{
-          isShow: false
-      }
-    },
-    mounted(){
-
-    }
+  name: 'home'
 }
 </script>
 
 <style lang="less">
-  .count-style {
-    font-size: 50px;
-  }
-
+.count-style {
+  font-size: 50px;
+}
 </style>

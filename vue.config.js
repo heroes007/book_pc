@@ -23,7 +23,17 @@ const BASE_URL = env === 'development' ? '/' : '/' // 生产环境下本地调�
 const config = {
 
   devServer: {
-    port: 5001
+    port: 5001,
+    proxy: {
+        '/api': {
+            target: 'http://localhost:3003',
+            changeOrigin: true,
+            ws: true,
+            pathRewrite: {
+                '^/api': ''
+            }
+        }
+    }
   },
   baseUrl: BASE_URL,
   assetsDir: './', // 静态资源目录
@@ -63,7 +73,7 @@ const config = {
   // 打包时不生成.map文件
   productionSourceMap: false,
   // 关闭ESLINT
-  lintOnSave: false
+  lintOnSave: true
 }
 
 module.exports = config

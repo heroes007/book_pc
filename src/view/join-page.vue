@@ -1,6 +1,6 @@
 <template>
   <div>
-    <h2>一级导航</h2>
+    <h1 class="h1">欢迎来到一个简单的图书管理系统</h1>
   </div>
 </template>
 
@@ -11,4 +11,8 @@ export default {
 </script>
 
 <style>
+  .h1{
+    text-align: center;
+    color: #666;
+  }
 </style>

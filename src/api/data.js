@@ -6,3 +6,27 @@ export const getTableData = () => {
     method: 'get'
   })
 }
+
+export const getData = (url, data) => {
+  return axios.request({
+    url,
+    method: 'get',
+    params: {...data}
+  })
+}
+
+export const postData = (url, data) => {
+  return axios.request({
+    url,
+    method: 'post',
+    data: {...data}
+  })
+}
+
+export const deleteData = (url, data) => {
+  return axios.request({
+    url,
+    method: 'delete',
+    data: {...data}
+  })
+}

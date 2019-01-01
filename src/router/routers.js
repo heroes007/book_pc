@@ -82,7 +82,7 @@ export const appRouter = [{
     name: 'update',
     meta: {
       icon: 'md-cloud-upload',
-      title: '导航一',
+      title: '导航',
       isMenu: true
     },
     component: Main,
@@ -91,7 +91,7 @@ export const appRouter = [{
       name: 'update_table_page',
       meta: {
         icon: 'md-cloud-upload',
-        title: '导航一',
+        title: 'Welcome',
         access: [1]
       },
       component: () =>
@@ -99,103 +99,78 @@ export const appRouter = [{
     }]
   },
   {
-    path: '/multilevel',
-    name: 'multilevel',
+    path: '/menu',
+    name: 'MENU',
     meta: {
       icon: 'md-trending-up',
-      title: '多级菜单',
+      title: '菜单',
       isMenu: true
     },
     component: Main,
-    children: [{
-        path: 'level_2_1',
-        name: 'level_2_1',
-        meta: {
-          icon: 'md-trending-up',
-          title: '二级-1',
-        },
-        component: () =>
-          import ('@/view/multilevel/level-1.vue')
-      },
-      {
-        path: 'level_2_2',
-        name: 'level_2_2',
-        meta: {
-          icon: 'md-trending-up',
-          title: '二级-2',
-        },
-        component: parentView,
-        children: [{
-          path: 'level_2_2_1',
-          name: 'level_2_2_1',
-          meta: {
-            icon: 'md-trending-up',
-            title: '三级',
-          },
-          component: () =>
-            import ('@/view/multilevel/level-2/level-2-1.vue')
-        }]
-      },
-      {
-        path: 'level_2_3',
-        name: 'level_2_3',
-        meta: {
-          icon: 'md-trending-up',
-          title: '二级-3'
-        },
-        component: parentView,
-        children: [{
-            path: 'level_2_3_1',
-            name: 'level_2_3_1',
-            meta: {
-              icon: 'md-trending-up',
-              title: '三级-1'
-            },
-            component: () =>
-              import ('@/view/multilevel/level-2/level-3/level-3-1.vue')
-          },
-          {
-            path: 'level_2_3_2',
-            name: 'level_2_3_2',
-            meta: {
-              access: [1],
-              icon: 'md-trending-up',
-              title: '三级-2'
-            },
-            component: () =>
-              import ('@/view/multilevel/level-2/level-3/level-3-1.vue')
-          }
-        ]
-      },
-      {
-        path: 'level_2_4',
-        name: 'level_2_4',
-        meta: {
-          icon: 'md-trending-up',
-          title: '二级-4'
-        },
-        component: parentView,
-        children: [{
-          path: 'level_2_4_1',
-          name: 'level_2_4_1',
-          meta: {
-            icon: 'md-trending-up',
-            title: '三级-1',
+    children: [
+        {
+          path: 'book',
+          name: 'Book',
+          meta:{
+            icon:'',
+            title:'图书',
           },
           component: parentView,
           children: [{
-            path: 'level_2_4_1_1',
-            name: 'level_2_4_1_1',
-            meta: {
-              icon: 'md-trending-up',
-              title: '四级-1',
-              access: [1]
+              path:'show-book',
+              name: 'ShowBook',
+              meta:{
+                  icon:'',
+                  title:'图书列表',
+              },
+              component: () => import('@/view/multilevel/Book/ShowBook/index.vue'),
             },
-            component: () =>
-              import ('@/view/multilevel/level-2/level-2-1.vue')
-          }]
-        }]
-      }
+              {
+              path:'add-book',
+              name: 'AddBook',
+              meta:{
+                  icon:'',
+                  title:'添加图书',
+              },
+              component: () => import('@/view/multilevel/Book/AddBook/index.vue'),
+          },]
+        },
+        {
+            path: 'category',
+            name: 'Category',
+            meta:{
+                icon:'',
+                title:'分类',
+            },
+            component: parentView,
+            children: [{
+                path:'show-category',
+                name: 'ShowCategory',
+                meta:{
+                    icon:'',
+                    title:'分类列表',
+                },
+                component: () => import('@/view/multilevel/Category/ShowCategory/index.vue'),
+            },
+            {
+                path:'add-category',
+                name: 'AddCategory',
+                meta:{
+                    icon:'',
+                    title:'添加分类',
+                },
+                component: () => import('@/view/multilevel/Category/AddCategory/index.vue'),
+            },]
+        },
+        {
+            path: 'form',
+            name: 'Form',
+            meta:{
+                icon:  '',
+                title: '统计图'
+            },
+            component: () => import('@/view/multilevel/Form/ShowForm')
+        }
     ]
   },
 ]
