@@ -1,9 +1,14 @@
+# xgkj后台模板工程
+
+#### 项目介绍
+后天管理系统基础模板
+技术栈：VUE-cli3.0+weback4+mock.js
 
 #### 安装教程
 
 1. 克隆到本地
     ```
-    git clone https://github.com/heroes007/book_pc.git
+    git clone https://gitee.com/xuegekeji/xgkj_admin_template.git
     ```
 2. 安装依赖
     ```
@@ -38,4 +43,4 @@
     └── tests  测试相关
 └── vue.config.js VUE-CLI配置文件
 ```
-# book_pc
+"# book_pc" 

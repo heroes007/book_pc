@@ -14,7 +14,6 @@
 
 <script>
 import './index.css'
-import axios from 'axios'
 import { getData, deleteData } from '@/api/data'
 export default {
   title: 'index',
